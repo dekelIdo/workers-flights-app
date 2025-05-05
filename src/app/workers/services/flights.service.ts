@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Flight } from '../models/flight.model';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -15,6 +15,11 @@ export class FlightsService {
   constructor(private http: HttpClient) {}
 
   getFlightsByWorker(workerId: number): Observable<Flight[]> {
+    if (!isDevMode()) {
+      // In production, always use mock data
+      return of(MOCK_FLIGHTS);
+    }
+    // In dev, try API, fallback to mock
     return this.http.get<Flight[]>(`${this.apiUrl}/${workerId}`).pipe(
       catchError(() => of(MOCK_FLIGHTS))
     );

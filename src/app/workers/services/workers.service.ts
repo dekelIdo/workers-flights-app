@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -21,6 +21,11 @@ export class WorkersService {
 
   // This method returns the observable
   getWorkers(): Observable<Worker[]> {
+    if (!isDevMode()) {
+      // In production, always use mock data
+      return of(MOCK_WORKERS);
+    }
+    // In dev, try API, fallback to mock
     return this.http.get<Worker[]>(this.apiUrl).pipe(
       catchError(() => of(MOCK_WORKERS))
     );
