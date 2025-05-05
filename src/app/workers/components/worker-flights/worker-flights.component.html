@@ -1,0 +1,33 @@
+<div class="flights-table">
+    <h3>Flights of {{ worker.name }}</h3>
+    <div class="scroll-x">
+      <ng-container *ngIf="flights.length; else noFlights">
+        <table>
+          <thead>
+            <tr>
+              <th>Flight Number</th>
+              <th>Origin</th>
+              <th>Origin Date</th>
+              <th>Destination</th>
+              <th>Destination Date</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let flight of flights" (click)="selectFlight(flight)" [class.selected]="flight === selectedFlight">
+              <td>{{ flight.num }}</td>
+              <td>{{ flight.from }}</td>
+              <td>{{ flight.from_date | date: 'short' }}</td>
+              <td>{{ flight.to }}</td>
+              <td>{{ flight.to_date | date: 'short' }}</td>
+              <td [title]="flight.duration | duration">{{ flight.duration | duration }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <ng-template #noFlights>
+        <div class="no-flights">No flights found for this worker.</div>
+      </ng-template>
+    </div>
+  </div>
+  

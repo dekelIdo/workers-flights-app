@@ -1,0 +1,10 @@
+<div class="workers-list">
+    <h3>Workers</h3>
+    <ul>
+      <li *ngFor="let worker of workers" (click)="selectWorker(worker)" [class.selected]="worker === selectedWorker">
+        <img class="avatar" [src]="getAvatarUrl(worker.name)" [alt]="worker.name + ' avatar'" width="32" height="32" />
+        {{ worker.name }}
+      </li>
+    </ul>
+  </div>
+  

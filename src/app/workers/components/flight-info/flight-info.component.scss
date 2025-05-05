@@ -1,0 +1,64 @@
+@import 'variables';
+
+.flight-info {
+  background: $surface;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  margin-top: 1.5rem;
+  border-left: 4px solid $accent;
+}
+
+h3 {
+  margin-top: 0;
+  color: $primary;
+  font-size: 1.2rem;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  margin-bottom: 0.7rem;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+}
+li:before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 0.7rem;
+  background-size: contain;
+}
+li:nth-child(1):before { background-image: url('data:image/svg+xml;utf8,<svg fill="%231976d2" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M10.18 9"/><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V21h2V13.5z"/></svg>'); }
+li:nth-child(2):before { background-image: url('data:image/svg+xml;utf8,<svg fill="%2300bfae" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M12 8V4l8 8-8 8v-4.1C7.1 15.9 4 17.5 2 20c0-5.5 4.5-10 10-12z"/></svg>'); }
+li:nth-child(3):before { background-image: url('data:image/svg+xml;utf8,<svg fill="%231976d2" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 10v6h3v-6H7zm5 0v6h3v-6h-3z"/></svg>'); }
+li:nth-child(4):before { background-image: url('data:image/svg+xml;utf8,<svg fill="%2300bfae" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>'); }
+
+@media (max-width: 900px) {
+  .flight-info {
+    min-width: 180px;
+    max-width: 100%;
+    padding: 1rem 0.7rem 0.7rem 0.7rem;
+  }
+  li {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .flight-info {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 0.5rem 0.2rem 0.2rem 0.2rem;
+    box-shadow: none;
+    border-radius: 0;
+    border-left: 3px solid $accent;
+  }
+  li {
+    font-size: 0.98rem;
+    margin-bottom: 0.4rem;
+  }
+}

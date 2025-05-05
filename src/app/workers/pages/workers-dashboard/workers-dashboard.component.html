@@ -1,0 +1,25 @@
+<div class="dashboard">
+  <div class="left-panel">
+    <app-workers-list (workerSelected)="onWorkerSelect($event)"></app-workers-list>
+    <ng-container *ngIf="selectedFlight">
+      <app-flight-info [flight]="selectedFlight"></app-flight-info>
+    </ng-container>
+  </div>
+
+  <div class="flight-section">
+    <ng-container *ngIf="selectedWorker; else noWorker">
+      <app-worker-flights
+        [worker]="selectedWorker"
+        (flightSelected)="onFlightSelect($event)">
+      </app-worker-flights>
+    </ng-container>
+    <ng-template #noWorker>
+      <div class="placeholder-panel">
+        <div class="placeholder-icon">🧑‍✈️</div>
+        <div class="placeholder-title">Select a worker</div>
+        <div class="placeholder-desc">Choose a worker from the list to view their flights and details.</div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+  

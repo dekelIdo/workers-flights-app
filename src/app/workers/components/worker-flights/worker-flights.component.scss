@@ -1,0 +1,119 @@
+@import 'variables'; 
+
+.flights-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  padding: 1.5rem 1.5rem;
+  margin-top: 0;
+  overflow-x: auto;
+  min-width: 0;
+}
+
+table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.05rem;
+  background: #fff;
+  table-layout: auto;
+}
+th, td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+}
+th {
+  background: var(--primary);
+  color: var(--surface);
+  font-weight: 700;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  letter-spacing: 0.04em;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 2px solid var(--border);
+}
+tbody tr {
+  background: #fff;
+  transition: background 0.2s, color 0.2s;
+}
+tbody tr:nth-child(even) {
+  background: #f7fafd;
+}
+tbody tr:hover {
+  background: #f0f4ff;
+  color: $primary;
+  cursor: pointer;
+}
+.selected {
+  background: #e6f0ff !important;
+  color: $primary;
+  font-weight: 600;
+  border-left: 4px solid $primary;
+}
+td {
+  border-bottom: 1px solid #e5e7eb;
+}
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 900px) {
+  .flights-table {
+    padding: 1rem 0.5rem;
+    margin-top: 1rem;
+  }
+  table {
+    font-size: 0.98rem;
+  }
+  th, td {
+    padding: 0.5rem 0.6rem;
+  }
+}
+@media (max-width: 600px) {
+  .flights-table {
+    padding: 0.5rem 0.2rem;
+    margin-top: 0.5rem;
+    box-shadow: none;
+    border-radius: 0;
+    overflow-x: auto;
+  }
+  table {
+    min-width: 600px;
+    font-size: 0.95rem;
+  }
+  th, td {
+    padding: 0.4rem 0.4rem;
+  }
+}
+
+.scroll-x {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-x::after {
+  display: none;
+}
+
+td:last-child {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 140px;
+}
+td:last-child[title] {
+  cursor: help;
+}
+
+.no-flights {
+  color: #b0b8c9;
+  font-size: 1.08rem;
+  text-align: center;
+  padding: 2rem 0 1.5rem 0;
+}

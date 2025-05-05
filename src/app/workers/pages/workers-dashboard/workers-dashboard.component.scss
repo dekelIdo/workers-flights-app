@@ -1,0 +1,133 @@
+@import 'variables';
+
+$gap: 2rem;
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 270px;
+  max-width: 270px;
+  min-width: 220px;
+  gap: 2rem;
+}
+
+.flight-section {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 100vw;
+    align-items: stretch;
+  }
+  .left-panel {
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .workers-list, app-workers-list {
+    flex: 1 1 0;
+    max-width: 100%;
+    min-width: 0;
+  }
+  app-flight-info {
+    flex: 1 1 0;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 0 0 1.5rem;
+    padding: 1.2rem 1rem;
+  }
+  .flight-section {
+    gap: 1.5rem;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 0;
+    gap: 0.7rem;
+  }
+  .left-panel {
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .workers-list, app-workers-list, app-flight-info {
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 1.2rem 0.3rem;
+  }
+  .flight-section {
+    gap: 0.7rem;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+.placeholder-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid var(--border);
+  // margin: 2rem 0 0 0;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+.placeholder-icon {
+  font-size: 2.7rem;
+  margin-bottom: 1.1rem;
+}
+.placeholder-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.placeholder-desc {
+  color: var(--text-light);
+  font-size: 1.08rem;
+}
+.dark-mode .placeholder-panel {
+  background: #23262f;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.dark-mode .placeholder-title {
+  color: var(--primary);
+}
+.dark-mode .placeholder-desc {
+  color: var(--text-light);
+}
+
+app-flight-info {
+  display: block;
+  margin: 2.5rem auto 0 auto;
+  max-width: 500px;
+}
