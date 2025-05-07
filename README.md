@@ -1,27 +1,98 @@
-# WorkersFlightsApp
+# ✈️ WorkersFlightsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+A modern Angular application for managing and viewing workers and their assigned flights.  
+Built with Angular 17, RxJS, and a RESTful backend.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+- **View all workers** in a clean, responsive UI
+- **See assigned flights** for each worker, with real-time updates
+- **Flight details modal** with rich information
+- **Automatic table refresh** every 60 seconds
+- **Robust error handling** with fallback data
+- **Mobile-friendly** and accessible design
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Tech Stack
 
-## Build
+- [Angular 17](https://angular.io/)
+- [RxJS](https://rxjs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) (for fast dev/build)
+- [REST API](#api-endpoints) (customizable backend)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ⚡ Getting Started
 
-## Running unit tests
+### 1. Clone the repository
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone https://github.com/your-username/WorkersFlightsApp.git
+cd WorkersFlightsApp
+```
 
-## Running end-to-end tests
+### 2. Install dependencies
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm install
+```
 
-## Further help
+### 3. Configure environment
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Edit `environment.ts` and `environment.prod.ts` to set your API base URL if needed.
+
+### 4. Start the development server
+
+```bash
+ng serve
+```
+
+Visit [http://localhost:4200/](http://localhost:4200/) in your browser.
+
+---
+
+## 🏗️ Build for Production
+
+```bash
+ng build
+```
+The build output will be in the `dist/` directory.
+
+---
+
+## 🧪 Testing
+
+- **Unit tests:**  
+  ```bash
+  ng test
+  ```
+- **End-to-end tests:**  
+  ```bash
+  ng e2e
+  ```
+  (Requires an e2e test runner to be set up.)
+
+## 🌐 API Endpoints
+
+The app expects a REST API with endpoints like:
+
+- `GET /workers` — List all workers
+- `GET /flights/:workerId` — List flights for a worker
+
+You can configure the API base URL in the environment files.
+
+## 🤝 Contributing
+
+1. Fork this repo
+2. Create your feature branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🙋‍♂️ Need Help?
+
+- For Angular CLI help, see the [Angular CLI docs](https://angular.io/cli).
+- For project-specific questions, open an issue or contact the maintainer.
