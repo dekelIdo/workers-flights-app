@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Worker } from '../models/worker.model';
+import { environment } from '../../../../environment';
 
 const MOCK_WORKERS: Worker[] = [
   { id: 1, name: 'John Doe' },
@@ -23,7 +24,7 @@ export class WorkersService {
     if (!isDevMode()) {
       return of(MOCK_WORKERS);
     }
-    return this.http.get<Worker[]>(this.apiUrl).pipe(
+    return this.http.get<Worker[]>(environment.apiUrl+'workers').pipe(
       catchError(() => of(MOCK_WORKERS))
     );
   }
