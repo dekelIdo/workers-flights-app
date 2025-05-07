@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Worker } from '../models/worker.model';
-import { environment } from '../../../../environment';
+import { environment } from '../../../environments/environment';
 
 const MOCK_WORKERS: Worker[] = [
   { id: 1, name: 'John Doe' },
