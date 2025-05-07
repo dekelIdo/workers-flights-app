@@ -48,29 +48,6 @@ ng serve
 
 Visit [http://localhost:4200/](http://localhost:4200/) in your browser.
 
----
-
-## 🏗️ Build for Production
-
-```bash
-ng build
-```
-The build output will be in the `dist/` directory.
-
----
-
-## 🧪 Testing
-
-- **Unit tests:**  
-  ```bash
-  ng test
-  ```
-- **End-to-end tests:**  
-  ```bash
-  ng e2e
-  ```
-  (Requires an e2e test runner to be set up.)
-
 ## 🌐 API Endpoints
 
 The app expects a REST API with endpoints like:
