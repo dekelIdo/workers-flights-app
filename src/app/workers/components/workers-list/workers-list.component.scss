@@ -8,6 +8,7 @@
   min-width: 240px;
   max-width: 340px;
   border: 2px solid var(--border);
+  // margin: 0rem 0rem 1.5rem 0.5rem;
   transition: background 0.3s, border 0.3s;
 }
 
@@ -37,7 +38,7 @@ li:hover {
   border: 1.5px solid var(--primary);
 }
 .selected {
-  background: var(--selected);
+background-color: gray;
   color: var(--primary);
   font-weight: 700;
   border: 2px solid var(--primary);
