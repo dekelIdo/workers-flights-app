@@ -16,6 +16,7 @@ export class FlightsService {
 
   getFlightsByWorker(workerId: number): Observable<Flight[]> {
     if (!isDevMode()) {
+      console.log('mock flitghts');
       return of(MOCK_FLIGHTS);
     }
     return this.http.get<Flight[]>(`${this.apiUrl}/${workerId}`).pipe(

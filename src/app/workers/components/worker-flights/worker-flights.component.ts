@@ -68,6 +68,10 @@ export class WorkerFlightsComponent implements OnChanges, OnDestroy {
   ngOnDestroy(): void {
     this.timerSub?.unsubscribe();
   }
+
+  public forceRefresh(): void {
+    this.startTimer();
+  }
 }
 
 function parseDate(dateStr: string): Date {

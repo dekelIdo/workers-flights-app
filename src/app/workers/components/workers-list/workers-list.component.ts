@@ -33,7 +33,6 @@ export class WorkersListComponent implements OnInit {
   }
 
   getAvatarUrl(name: string): string {
-    // Use DiceBear Avatars API for a unique face avatar
     return `https://api.dicebear.com/7.x/fun-emoji/svg?seed=${encodeURIComponent(name)}`;
   }
 }
