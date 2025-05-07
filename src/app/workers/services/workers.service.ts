@@ -21,7 +21,8 @@ export class WorkersService {
   constructor(private readonly http: HttpClient) {}
 
   getWorkers(): Observable<Worker[]> {
-    return this.http.get<Worker[]>(environment.apiUrl + 'workers').pipe(
+    console.log('environment',environment);
+    return this.http.get<Worker[]>('workers').pipe(
       catchError(() => of(MOCK_WORKERS))
     );
   }
