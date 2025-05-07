@@ -4,6 +4,12 @@ A modern Angular application for managing and viewing workers and their assigned
 Built with Angular 17, RxJS, and a RESTful backend.
 
 
+## Responsive disign 
+
+<img width="937" alt="RESPONSIVE PAGES" src="https://github.com/user-attachments/assets/49f37c64-886a-4758-8404-c5210a2f0fd2">
+
+
+
 ## 🚀 Features
 
 - **View all workers** in a clean, responsive UI
