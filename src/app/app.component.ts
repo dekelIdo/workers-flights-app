@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { WorkersListComponent } from './workers/components/workers-list/workers-list.component';
-import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
-
+import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [RouterOutlet, WorkersListComponent, HttpClientModule] // Include RouterOutlet, WorkersListComponent, and HttpClientModule here
+  imports: [RouterOutlet, WorkersListComponent, HttpClientModule] 
 })
 export class AppComponent {
   title = 'workers-flights-app';

@@ -22,6 +22,7 @@ export class WorkersService {
 
   getWorkers(): Observable<Worker[]> {
     if (!isDevMode()) {
+      
       return of(MOCK_WORKERS);
     }
     return this.http.get<Worker[]>(environment.apiUrl+'workers').pipe(
