@@ -40,20 +40,7 @@ export class WorkerFlightsComponent implements OnChanges, OnDestroy {
   startTimer(): void {
     this.timerSub?.unsubscribe();
     this.timerSub = timer(0, 60000)
-      .pipe(switchMap(() => this.flightsService.getFlightsByWorker(this.worker.id)))
-      .subscribe((data) => {
-        this.flights = data.map(flight => ({
-          ...flight,
-          from_date: typeof flight.from_date === 'string' ? parseDate(flight.from_date) : flight.from_date,
-          to_date: typeof flight.to_date === 'string' ? parseDate(flight.to_date) : flight.to_date
-        }));
-        if (this.flights.length > 0) {
-          this.selectedFlight = this.flights[0];
-          this.flightSelected.emit(this.flights[0]);
-        } else {
-          this.selectedFlight = undefined;
-        }
-      });
+      .subscribe(() => this.loadFlights());
   }
 
   selectFlight(flight: Flight): void {
@@ -71,6 +58,26 @@ export class WorkerFlightsComponent implements OnChanges, OnDestroy {
 
   public forceRefresh(): void {
     this.startTimer();
+  }
+
+  public refreshFlights(): void {
+    this.loadFlights();
+  }
+
+  private loadFlights(): void {
+    this.flightsService.getFlightsByWorker(this.worker.id).subscribe((data) => {
+      this.flights = data.map(flight => ({
+        ...flight,
+        from_date: typeof flight.from_date === 'string' ? parseDate(flight.from_date) : flight.from_date,
+        to_date: typeof flight.to_date === 'string' ? parseDate(flight.to_date) : flight.to_date
+      }));
+      if (this.flights.length > 0) {
+        this.selectedFlight = this.flights[0];
+        this.flightSelected.emit(this.flights[0]);
+      } else {
+        this.selectedFlight = undefined;
+      }
+    });
   }
 }
 
