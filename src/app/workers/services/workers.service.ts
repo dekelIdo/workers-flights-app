@@ -22,7 +22,7 @@ export class WorkersService {
 
   getWorkers(): Observable<Worker[]> {
     console.log('environment',environment);
-    return this.http.get<Worker[]>('workers').pipe(
+    return this.http.get<Worker[]>(environment.apiUrl + 'workers').pipe(
       catchError(() => of(MOCK_WORKERS))
     );
   }
