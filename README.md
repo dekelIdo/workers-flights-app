@@ -1,27 +1,66 @@
-# WorkersFlightsApp
+# ✈️ Workers Flights App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+A modern Angular application for managing and viewing workers and their assigned flights.  
+Built with Angular 17, RxJS, and a RESTful backend.
 
-## Development server
+You can visit it on - https://workers-flights-app.onrender.com (Pay attention that the deploy is working with Mock Data because the core and server problems) 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<img width="937" alt="RESPONSIVE PAGES" src="https://github.com/user-attachments/assets/30c4b964-a35c-4cac-9673-1d2f67c0c478">
 
-## Code scaffolding
+## ⚡ Getting Started with real data
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 1. Clone the repository
 
-## Build
+```bash
+git clone https://github.com/your-username/WorkersFlightsApp.git
+cd WorkersFlightsApp
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 2. Install dependencies
 
-## Running unit tests
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 3. Configure environment
 
-## Running end-to-end tests
+Edit `environment.ts` and `environment.prod.ts` to set your API base URL if needed.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 4. Start the development server
 
-## Further help
+```bash
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Dark & Light mode 
+<img width="937" alt="RESPONSIVE PAGES" src="https://github.com/user-attachments/assets/a9aa6ba9-56be-4892-ad0a-6e82be5d1120">
+
+## Responsive disign 
+<img width="937" alt="RESPONSIVE PAGES" src="https://github.com/user-attachments/assets/ee97d18d-2e36-448b-b4b3-e1a5d475dd57">
+
+## 🚀 Features
+- **View all workers** in a clean, responsive UI
+- **Automatic table refresh** every 60 seconds
+- **See assigned flights** for each worker, with real-time updates
+- **Flight details modal** with rich information
+- **Robust error handling** with fallback data
+- **Mobile-friendly** and accessible design
+
+Visit [http://localhost:4200/](http://localhost:4200/) in your browser.
+
+## 🛠️ Tech Stack
+
+- [Angular 17](https://angular.io/)
+- [RxJS](https://rxjs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) (for fast dev/build)
+- [REST API](#api-endpoints) (customizable backend)
+
+## 🌐 API Endpoints
+
+The app expects a REST API with endpoints like:
+
+- `GET /workers` — List all workers
+- `GET /flights/:workerId` — List flights for a worker
+
+You can configure the API base URL in the environment files.
