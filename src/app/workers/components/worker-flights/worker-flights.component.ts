@@ -1,16 +1,16 @@
 import {
   Component,
   Input,
-  OnChanges,
   Output,
   EventEmitter,
   SimpleChanges,
+  OnChanges,
   OnDestroy
 } from '@angular/core';
 import { Flight } from '../../models/flight.model';
 import { FlightsService } from '../../services/flights.service';
 import { Worker } from '../../models/worker.model';
-import { Subscription, timer, switchMap, startWith } from 'rxjs';
+import { Subscription, timer, switchMap } from 'rxjs';
 import { CommonModule, DatePipe } from '@angular/common';
 import { DurationPipe } from '../../../shared/duration.pipe';
 
@@ -29,7 +29,7 @@ export class WorkerFlightsComponent implements OnChanges, OnDestroy {
   selectedFlight?: Flight;
   private timerSub?: Subscription;
 
-  constructor(private flightsService: FlightsService) {}
+  constructor(private readonly flightsService: FlightsService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['worker']) {
@@ -37,7 +37,7 @@ export class WorkerFlightsComponent implements OnChanges, OnDestroy {
     }
   }
 
-  startTimer() {
+  startTimer(): void {
     this.timerSub?.unsubscribe();
     this.timerSub = timer(0, 60000)
       .pipe(switchMap(() => this.flightsService.getFlightsByWorker(this.worker.id)))
@@ -56,9 +56,13 @@ export class WorkerFlightsComponent implements OnChanges, OnDestroy {
       });
   }
 
-  selectFlight(flight: Flight) {
+  selectFlight(flight: Flight): void {
     this.selectedFlight = flight;
     this.flightSelected.emit(flight);
+  }
+
+  trackByFlightNum(index: number, flight: Flight): number {
+    return flight.num;
   }
 
   ngOnDestroy(): void {
@@ -66,7 +70,6 @@ export class WorkerFlightsComponent implements OnChanges, OnDestroy {
   }
 }
 
-// Helper function to parse dd/MM/yyyy to Date
 function parseDate(dateStr: string): Date {
   if (!dateStr) return new Date('');
   const [day, month, year] = dateStr.split('/').map(Number);

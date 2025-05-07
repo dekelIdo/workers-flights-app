@@ -1,12 +1,15 @@
 @import 'variables';
 
 .workers-list {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-  padding: 1.5rem 1rem;
-  min-width: 220px;
-  max-width: 300px;
+  background: linear-gradient(135deg, var(--surface) 80%, var(--background) 100%);
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  min-width: 240px;
+  max-width: 340px;
+  border: 2px solid var(--border);
+  // margin: 0rem 0rem 1.5rem 0.5rem;
+  transition: background 0.3s, border 0.3s;
 }
 
 ul {
@@ -16,44 +19,52 @@ ul {
 }
 
 li {
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
-  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.7rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  color: #222;
-  border: 1px solid transparent;
-  font-size: 1.08rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  color: var(--text);
+  border: 1.5px solid transparent;
+  font-size: 1.13rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 li:hover {
-  background: $hover;
-  color: $primary;
+  background: var(--hover);
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
 }
 .selected {
-  background: $selected;
-  color: $primary;
-  font-weight: 600;
-  border: 1.5px solid $primary;
+  background: var(--selected);
+  color: var(--primary);
+  font-weight: 700;
+  border: 2px solid var(--primary);
+  box-shadow: 0 2px 8px rgba(25,118,210,0.10);
 }
 
 @media (max-width: 900px) {
   .workers-list {
     min-width: 180px;
     max-width: 100%;
-    padding: 1rem 0.5rem;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    border: 2px solid var(--border) !important;
+    margin: 0 !important;
   }
   li {
-    font-size: 1rem;
-    padding: 0.6rem 0.7rem;
+    font-size: 1.03rem;
+    padding: 0.7rem 0.7rem;
   }
 }
 @media (max-width: 600px) {
   .workers-list {
-    min-width: 100%;
+    // min-width: 100%;
     max-width: 100%;
-    padding: 0.5rem 0.2rem;
-    box-shadow: none;
-    border-radius: 0;
+    padding: 0.7rem 0.2rem 0.5rem 0.2rem;
+    border: 2px solid var(--border) !important;
+    margin: 0 !important;
   }
   li {
     font-size: 0.98rem;
@@ -66,6 +77,10 @@ li:hover {
   border-radius: 50%;
   margin-right: 0.7rem;
   vertical-align: middle;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  background: #f5f7fa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  background: var(--background);
+  border: 2.5px solid var(--border);
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
 }

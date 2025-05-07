@@ -1,10 +1,15 @@
-<div class="flight-info">
-    <h3>Flight Info</h3>
+<div class="flight-info" *ngIf="flight">
+    <h3>Flight Info
+      <button class="expand-btn" (click)="openModal()" aria-label="Expand flight info" tabindex="0" title="Expand to modal view">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v6H3"/><path d="M15 21v-6h6"/></svg>
+      </button>
+    </h3>
     <ul>
       <li>Plane Number: {{ flight.plane }}</li>
       <li>Duration: {{ flight.duration | duration }}</li>
       <li>Origin Gate: {{ flight.from_gate }}</li>
       <li>Destination Gate: {{ flight.to_gate }}</li>
     </ul>
-  </div>
+    <app-flight-info-modal *ngIf="showModal" [flight]="flight" (close)="closeModal()"></app-flight-info-modal>
+</div>
   

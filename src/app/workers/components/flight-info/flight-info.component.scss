@@ -1,18 +1,24 @@
 @import 'variables';
 
 .flight-info {
-  background: $surface;
-  border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-  padding: 1.5rem 1.5rem 1rem 1.5rem;
-  margin-top: 1.5rem;
-  border-left: 4px solid $accent;
+  background: linear-gradient(135deg, var(--surface) 80%, var(--background) 100%);
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  min-width: 240px;
+  max-width: 340px;
+  border: 2px solid var(--border) !important;
+  margin: 0rem 0.5rem 1.5rem 0rem;
+  transition: background 0.3s, border 0.3s;
 }
 
 h3 {
   margin-top: 0;
-  color: $primary;
-  font-size: 1.2rem;
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
 }
 ul {
   list-style: none;
@@ -20,10 +26,12 @@ ul {
   margin: 0;
 }
 li {
-  margin-bottom: 0.7rem;
-  font-size: 1.08rem;
+  margin-bottom: 0.9rem;
+  font-size: 1.13rem;
   display: flex;
   align-items: center;
+  color: var(--text);
+  gap: 0.7rem;
 }
 li:before {
   content: '';
@@ -42,23 +50,47 @@ li:nth-child(4):before { background-image: url('data:image/svg+xml;utf8,<svg fil
   .flight-info {
     min-width: 180px;
     max-width: 100%;
-    padding: 1rem 0.7rem 0.7rem 0.7rem;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    border: 2px solid var(--border) !important;
+    margin: 0 !important;
   }
   li {
-    font-size: 1rem;
+    font-size: 1.03rem;
   }
 }
 @media (max-width: 600px) {
   .flight-info {
-    min-width: 100%;
+    // min-width: 100%;
     max-width: 100%;
-    padding: 0.5rem 0.2rem 0.2rem 0.2rem;
-    box-shadow: none;
-    border-radius: 0;
-    border-left: 3px solid $accent;
+    padding: 0.7rem 0.2rem 0.5rem 0.2rem;
+    border: 2px solid var(--border) !important;
+    margin: 0 !important;
   }
   li {
     font-size: 0.98rem;
     margin-bottom: 0.4rem;
   }
+}
+
+.expand-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  margin-left: 0.7rem;
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+  vertical-align: middle;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.expand-btn:hover, .expand-btn:focus {
+  background: var(--border);
+  color: var(--accent);
+}
+.expand-btn svg {
+  display: block;
 }

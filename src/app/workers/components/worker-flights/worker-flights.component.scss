@@ -1,23 +1,37 @@
-@import 'variables'; 
+@import 'variables';
 
 .flights-table {
-  width: 100%;
-  background: #fff;
+  width: 97%;
+  max-width: 100%;
+  background: var(--surface);
   border-radius: 10px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-  padding: 1.5rem 1.5rem;
-  margin-top: 0;
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  min-width: 240px;
+  border: 2px solid var(--border) !important;
+  margin: 0rem 0.5rem 1.5rem 0rem;
   overflow-x: auto;
   min-width: 0;
+  transition: background 0.3s, border 0.3s;
+}
+
+.scroll-x {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-x::after {
+  display: none;
 }
 
 table {
   width: 100%;
-  min-width: 700px;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 1.05rem;
-  background: #fff;
+  background: var(--surface);
   table-layout: auto;
 }
 th, td {
@@ -38,25 +52,25 @@ th {
   border-bottom: 2px solid var(--border);
 }
 tbody tr {
-  background: #fff;
+  background: var(--surface);
   transition: background 0.2s, color 0.2s;
 }
 tbody tr:nth-child(even) {
-  background: #f7fafd;
+  background: var(--background);
 }
 tbody tr:hover {
-  background: #f0f4ff;
-  color: $primary;
+  background: var(--hover);
+  color: var(--primary);
   cursor: pointer;
 }
 .selected {
-  background: #e6f0ff !important;
-  color: $primary;
+  background: var(--selected) !important;
+  color: var(--primary);
   font-weight: 600;
-  border-left: 4px solid $primary;
+  border-left: 4px solid var(--primary);
 }
 td {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border);
 }
 tbody tr:last-child td {
   border-bottom: none;
@@ -64,8 +78,11 @@ tbody tr:last-child td {
 
 @media (max-width: 900px) {
   .flights-table {
-    padding: 1rem 0.5rem;
-    margin-top: 1rem;
+    min-width: 180px;
+    max-width: 100%;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    border: 2px solid var(--border) !important;
+    margin: 0 !important;
   }
   table {
     font-size: 0.98rem;
@@ -76,29 +93,19 @@ tbody tr:last-child td {
 }
 @media (max-width: 600px) {
   .flights-table {
-    padding: 0.5rem 0.2rem;
-    margin-top: 0.5rem;
+    // min-width: 100%;
+    max-width: 100%;
+    padding: 0.7rem 0.2rem 0.5rem 0.2rem;
     box-shadow: none;
-    border-radius: 0;
-    overflow-x: auto;
+    border: 2px solid var(--border) !important;
+    margin: 0 !important;
   }
   table {
-    min-width: 600px;
     font-size: 0.95rem;
   }
   th, td {
     padding: 0.4rem 0.4rem;
   }
-}
-
-.scroll-x {
-  width: 100%;
-  overflow-x: auto;
-  position: relative;
-  -webkit-overflow-scrolling: touch;
-}
-.scroll-x::after {
-  display: none;
 }
 
 td:last-child {
@@ -112,7 +119,7 @@ td:last-child[title] {
 }
 
 .no-flights {
-  color: #b0b8c9;
+  color: var(--text-light);
   font-size: 1.08rem;
   text-align: center;
   padding: 2rem 0 1.5rem 0;

@@ -16,10 +16,8 @@ export class FlightsService {
 
   getFlightsByWorker(workerId: number): Observable<Flight[]> {
     if (!isDevMode()) {
-      // In production, always use mock data
       return of(MOCK_FLIGHTS);
     }
-    // In dev, try API, fallback to mock
     return this.http.get<Flight[]>(`${this.apiUrl}/${workerId}`).pipe(
       catchError(() => of(MOCK_FLIGHTS))
     );

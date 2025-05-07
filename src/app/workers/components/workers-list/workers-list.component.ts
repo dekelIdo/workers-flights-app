@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { WorkersService } from '../../services/workers.service';
 import { Worker } from '../../models/worker.model';
 import { CommonModule } from '@angular/common';
@@ -12,26 +12,24 @@ import { CommonModule } from '@angular/common';
 })
 export class WorkersListComponent implements OnInit {
   workers: Worker[] = [];
-  selectedWorker?: Worker;
-
+  @Input() selectedWorker?: Worker;
   @Output() workerSelected = new EventEmitter<Worker>();
 
-  constructor(public workersService: WorkersService) {}
+  constructor(private readonly workersService: WorkersService) {}
 
   ngOnInit(): void {
     this.workersService.getWorkers().subscribe({
-      next: (data) => {
-        this.workers = data;
-      },
-      error: (err) => {
-        console.error('Error fetching workers:', err);
-      }
+      next: (data) => { this.workers = data; },
+      error: (err) => { console.error('Error fetching workers:', err); }
     });
   }
 
   selectWorker(worker: Worker): void {
-    this.selectedWorker = worker;
     this.workerSelected.emit(worker);
+  }
+
+  trackByWorkerId(index: number, worker: Worker): number {
+    return worker.id;
   }
 
   getAvatarUrl(name: string): string {

@@ -1,0 +1,13 @@
+<div class="modal-backdrop" (click)="close.emit()" tabindex="-1" aria-hidden="true"></div>
+<div class="modal-dialog" role="dialog" aria-modal="true" tabindex="0">
+  <button class="close-btn" (click)="close.emit()" aria-label="Close modal">&times;</button>
+  <div class="flight-info-modal-content" *ngIf="flight">
+    <h2>Flight Info</h2>
+    <ul>
+      <li><strong>Plane Number:</strong> {{ flight.plane }}</li>
+      <li><strong>Duration:</strong> {{ flight.duration | duration }}</li>
+      <li><strong>Origin Gate:</strong> {{ flight.from_gate }}</li>
+      <li><strong>Destination Gate:</strong> {{ flight.to_gate }}</li>
+    </ul>
+  </div>
+</div>

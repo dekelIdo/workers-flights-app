@@ -1,0 +1,104 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.modal-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, var(--surface) 80%, var(--background) 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  border: 2.5px solid var(--border);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  max-width: 95vw;
+  width: 420px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transition: background 0.3s, border 0.3s;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 2.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+.close-btn:hover, .close-btn:focus {
+  color: var(--accent);
+  outline: none;
+}
+
+.flight-info-modal-content {
+  width: 100%;
+  color: var(--text);
+}
+.flight-info-modal-content h2 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+.flight-info-modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.flight-info-modal-content li {
+  margin-bottom: 1.1rem;
+  font-size: 1.18rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.flight-info-modal-content li strong {
+  min-width: 130px;
+  color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .modal-dialog {
+    min-width: 220px;
+    width: 95vw;
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+  }
+  .flight-info-modal-content li {
+    font-size: 1.05rem;
+  }
+}
+@media (max-width: 600px) {
+  .modal-dialog {
+    min-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    padding: 0.7rem 0.2rem 0.5rem 0.2rem;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  .flight-info-modal-content li {
+    font-size: 0.98rem;
+    margin-bottom: 0.5rem;
+  }
+  .close-btn {
+    font-size: 2rem;
+    margin: 0.2rem 0.2rem 0.5rem 0;
+  }
+}

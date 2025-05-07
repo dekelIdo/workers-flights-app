@@ -1,8 +1,8 @@
 @import 'variables';
 
-$gap: 2rem;
 
 .dashboard {
+  border: none;
   display: flex;
   flex-direction: row;
   gap: 2.5rem;
@@ -18,7 +18,6 @@ $gap: 2rem;
   flex: 0 0 270px;
   max-width: 270px;
   min-width: 220px;
-  gap: 2rem;
 }
 
 .flight-section {
@@ -63,8 +62,11 @@ $gap: 2rem;
 
 @media (max-width: 600px) {
   .dashboard {
+    flex-direction: column;
     padding: 0;
     gap: 0.7rem;
+    max-width: 100vw;
+    align-items: stretch;
   }
   .left-panel {
     flex-direction: column;
@@ -72,11 +74,14 @@ $gap: 2rem;
     max-width: 100%;
     min-width: 0;
   }
-  .workers-list, app-workers-list, app-flight-info {
+  .workers-list, app-workers-list, app-flight-info, .flights-table, .flight-section {
     max-width: 100%;
     min-width: 0;
     margin: 0 !important;
-    padding: 1.2rem 0.3rem;
+    padding: 0.7rem 0.2rem 0.5rem 0.2rem;
+    box-shadow: none;
+    border-radius: 0;
+    border-width: 1px;
   }
   .flight-section {
     gap: 0.7rem;
@@ -95,9 +100,8 @@ $gap: 2rem;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   border: 1px solid var(--border);
-  // margin: 2rem 0 0 0;
   padding: 2.5rem 1.5rem 2rem 1.5rem;
-  margin-right: 1.5rem;
+  // margin-right: 1.5rem;
   text-align: center;
 }
 .placeholder-icon {
