@@ -13,8 +13,12 @@ You can visit it on - https://workers-flights-app.onrender.com (Pay attention th
 
 ```bash
 git clone https://github.com/your-username/WorkersFlightsApp.git
+```
+
+```bash
 cd WorkersFlightsApp
 ```
+
 
 ### 2. Install dependencies
 
