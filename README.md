@@ -12,7 +12,7 @@ You can visit it on - https://workers-flights-app.onrender.com (Pay attention th
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/WorkersFlightsApp.git
+git clone https://github.com/dekelido/WorkersFlightsApp.git
 ```
 
 ```bash
