@@ -3,7 +3,7 @@
 A modern Angular application for managing and viewing workers and their assigned flights.  
 Built with Angular 17, RxJS, and a RESTful backend.
 
-You can visit it on - https://workers-flights-app.onrender.com (Pay attention that the deploy is working with Mock Data because the core and server problems) 
+You can visit it on - https://workers-flights-app.onrender.com (Pay attention that the deploy is working with Mock Data, for real data need to implement ssr) 
 
 <img width="937" alt="RESPONSIVE PAGES" src="https://github.com/user-attachments/assets/30c4b964-a35c-4cac-9673-1d2f67c0c478">
 
@@ -39,7 +39,7 @@ ng serve
 ## Dark & Light mode 
 <img width="937" alt="RESPONSIVE PAGES" src="https://github.com/user-attachments/assets/a9aa6ba9-56be-4892-ad0a-6e82be5d1120">
 
-## Responsive disign 
+## Responsive design 
 <img width="937" alt="RESPONSIVE PAGES" src="https://github.com/user-attachments/assets/ee97d18d-2e36-448b-b4b3-e1a5d475dd57">
 
 ## 🚀 Features
