@@ -1,7 +1,7 @@
 .modal-backdrop {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.55);
+  background: #0000008c;
   z-index: 1000;
   transition: background 0.3s;
 }
@@ -13,7 +13,7 @@
   transform: translate(-50%, -50%);
   background: linear-gradient(135deg, var(--surface) 85%, var(--background) 100%);
   border-radius: 22px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+  box-shadow: 0 8px 40px #00000038;
   border: 2.5px solid var(--border);
   padding: 2.8rem 2.2rem 2.2rem 2.2rem;
   min-width: 340px;
@@ -42,8 +42,8 @@
 }
 .close-btn:hover, .close-btn:focus {
   color: var(--accent);
-  background: rgba(0,0,0,0.06);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #0000000f;
+  box-shadow: 0 2px 8px #00000014;
   outline: none;
 }
 
@@ -74,7 +74,6 @@
   line-height: 1.5;
   padding: 0.3rem 0.1rem;
   border-radius: 6px;
-  transition: background 0.2s;
 }
 .flight-info-modal-content li strong {
   min-width: 140px;
@@ -108,8 +107,5 @@
 .flight-info-modal-content,
 .flight-info-modal-content *,
 .close-btn {
-  font-family: 'Inter', 'Roboto', 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, sans-serif;
-  font-smooth: always;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter';
 }
