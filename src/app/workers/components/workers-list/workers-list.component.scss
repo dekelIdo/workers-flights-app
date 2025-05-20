@@ -3,7 +3,7 @@
 .workers-list {
   background: linear-gradient(135deg, var(--surface) 80%, var(--background) 100%);
   border-radius: 14px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
   padding: 2rem 1.2rem 1.5rem 1.2rem;
   min-width: 240px;
   max-width: 340px;
@@ -29,19 +29,21 @@ li {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
+
 li:hover {
   background: var(--hover);
   color: var(--primary);
   border: 1.5px solid var(--primary);
 }
+
 .selected {
-  background: var(--selected);
+  background-color: gray;
   color: var(--primary);
   font-weight: 700;
   border: 2px solid var(--primary);
-  box-shadow: 0 2px 8px rgba(25,118,210,0.10);
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
 }
 
 @media (max-width: 900px) {
@@ -52,11 +54,13 @@ li:hover {
     border: 2px solid var(--border) !important;
     margin: 0 !important;
   }
+
   li {
     font-size: 1.03rem;
     padding: 0.7rem 0.7rem;
   }
 }
+
 @media (max-width: 600px) {
   .workers-list {
     // min-width: 100%;
@@ -65,6 +69,7 @@ li:hover {
     border: 2px solid var(--border) !important;
     margin: 0 !important;
   }
+
   li {
     font-size: 0.98rem;
     padding: 0.5rem 0.5rem;
@@ -76,7 +81,7 @@ li:hover {
   border-radius: 50%;
   margin-right: 0.7rem;
   vertical-align: middle;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
   background: var(--background);
   border: 2.5px solid var(--border);
   width: 38px;
