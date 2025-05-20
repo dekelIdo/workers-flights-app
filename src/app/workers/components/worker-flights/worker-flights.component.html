@@ -1,4 +1,9 @@
 <div class="flights-table">
+  <div class="flights-header">
+    <button class="refresh-btn" (click)="refreshFlights()" aria-label="Refresh flights">
+      &#x21bb;
+    </button>
+  </div>
     <h3>Flights of {{ worker.name }}</h3>
     <div class="scroll-x">
       <ng-container *ngIf="flights.length; else noFlights">

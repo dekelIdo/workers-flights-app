@@ -55,6 +55,9 @@ li:nth-child(4):before { background-image: url('data:image/svg+xml;utf8,<svg fil
   li {
     font-size: 1.03rem;
   }
+  h3{
+    margin-top:revert
+  }
 }
 @media (max-width: 600px) {
   .flight-info {

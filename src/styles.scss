@@ -1,7 +1,7 @@
 @import 'variables';
 
 :root {
-  --primary: #1976d2;
+  --primary: #145aa0;
   --primary-light: #63a4ff;
   --primary-dark: #004ba0;
   --accent: #00bfae;
@@ -11,7 +11,7 @@
   --text-light: #666;
   --border: #e0e0e0;
   --selected: #e3f2fd;
-  --hover: #f1f8ff;
+  --hover: #a0b3c6;
   --error: #d32f2f;
 }
 
@@ -31,7 +31,7 @@ body.dark-mode {
 }
 
 body {
-  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-family: 'cursive';
   background: var(--background);
   color: var(--text);
   margin: 0;
